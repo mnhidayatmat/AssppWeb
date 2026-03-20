@@ -22,6 +22,7 @@ const VersionHistory = lazy(() => import("./components/Search/VersionHistory"));
 const DownloadList = lazy(() => import("./components/Download/DownloadList"));
 const AddDownload = lazy(() => import("./components/Download/AddDownload"));
 const PackageDetail = lazy(() => import("./components/Download/PackageDetail"));
+const UploadPage = lazy(() => import("./components/Upload/UploadPage"));
 const SettingsPage = lazy(() => import("./components/Settings/SettingsPage"));
 
 function Loading() {
@@ -81,6 +82,7 @@ export default function App() {
               <Route path="/downloads" element={<DownloadList />} />
               <Route path="/downloads/add" element={<AddDownload />} />
               <Route path="/downloads/:id" element={<PackageDetail />} />
+              <Route path="/upload" element={<UploadPage />} />
               <Route path="/settings" element={<SettingsPage />} />
             </Routes>
           </Suspense>

@@ -21,6 +21,7 @@
     "accounts": "账号",
     "search": "搜索",
     "downloads": "下载",
+    "upload": "上传",
     "settings": "设置"
   },
   "home": {
@@ -212,6 +213,28 @@
       "update": "立即更新",
       "updateFailed": "开始更新失败。"
     }
+  },
+  "upload": {
+    "title": "上传 IPA",
+    "description": "上传使用 Flutter 或其他框架构建的 iOS 应用（IPA）。",
+    "ipaFile": "IPA 文件",
+    "dropFile": "将 IPA 文件拖放到此处",
+    "orClick": "或点击选择文件",
+    "appName": "应用名称",
+    "bundleId": "Bundle ID",
+    "version": "版本号",
+    "submit": "上传 IPA",
+    "uploading": "上传中...",
+    "invalidFile": "仅允许 .ipa 文件",
+    "noFile": "请选择一个 IPA 文件",
+    "missingFields": "请填写所有必填字段",
+    "success": "{{name}} 上传成功",
+    "failed": "上传失败，请重试。",
+    "instructionsTitle": "如何为 iOS 构建 Flutter 应用",
+    "step1": "在 Mac 上打开您的 Flutter 项目",
+    "step2": "运行 'flutter build ipa' 构建 iOS 应用",
+    "step3": "在 build/ios/archive/ 中找到 .ipa 文件",
+    "step4": "使用上方表单上传 .ipa 文件"
   },
   "settings": {
     "title": "设置",

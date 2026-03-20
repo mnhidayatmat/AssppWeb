@@ -21,6 +21,7 @@
     "accounts": "Accounts",
     "search": "Search",
     "downloads": "Downloads",
+    "upload": "Upload",
     "settings": "Settings"
   },
   "home": {
@@ -212,6 +213,28 @@
       "update": "Update Now",
       "updateFailed": "Failed to start update."
     }
+  },
+  "upload": {
+    "title": "Upload IPA",
+    "description": "Upload an iOS app (IPA) built with Flutter or other frameworks.",
+    "ipaFile": "IPA File",
+    "dropFile": "Drop your IPA file here",
+    "orClick": "or click to browse",
+    "appName": "App Name",
+    "bundleId": "Bundle ID",
+    "version": "Version",
+    "submit": "Upload IPA",
+    "uploading": "Uploading...",
+    "invalidFile": "Only .ipa files are allowed",
+    "noFile": "Please select an IPA file",
+    "missingFields": "Please fill in all required fields",
+    "success": "{{name}} uploaded successfully",
+    "failed": "Upload failed. Please try again.",
+    "instructionsTitle": "How to build your Flutter app for iOS",
+    "step1": "Open your Flutter project on macOS",
+    "step2": "Run 'flutter build ipa' to build the iOS app",
+    "step3": "Find the .ipa file in build/ios/archive/",
+    "step4": "Upload the .ipa file using the form above"
   },
   "settings": {
     "title": "Settings",

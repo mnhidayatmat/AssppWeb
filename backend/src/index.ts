@@ -14,12 +14,14 @@ import packageRoutes from "./routes/packages.js";
 import installRoutes from "./routes/install.js";
 import settingsRoutes from "./routes/settings.js";
 import bagRoutes from "./routes/bag.js";
+import uploadRoutes from "./routes/upload.js";
 
 const app = express();
 
 // Middleware
 app.use(httpsRedirect);
 app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 // API routes
 app.use("/api", accessAuth);
@@ -30,6 +32,7 @@ app.use("/api", packageRoutes);
 app.use("/api", installRoutes);
 app.use("/api", settingsRoutes);
 app.use("/api", bagRoutes);
+app.use("/api", uploadRoutes);
 
 // Serve static frontend files
 const publicDir = path.resolve(import.meta.dirname, "../public");

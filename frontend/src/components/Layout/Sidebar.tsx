@@ -5,6 +5,7 @@ import {
   AccountsIcon,
   SearchIcon,
   DownloadsIcon,
+  UploadIcon,
   SettingsIcon,
   SunIcon,
   MoonIcon,
@@ -17,6 +18,7 @@ const navItems = [
   { to: "/accounts", label: "accounts", icon: AccountsIcon },
   { to: "/search", label: "search", icon: SearchIcon },
   { to: "/downloads", label: "downloads", icon: DownloadsIcon },
+  { to: "/upload", label: "upload", icon: UploadIcon },
   { to: "/settings", label: "settings", icon: SettingsIcon },
 ];
 

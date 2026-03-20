@@ -21,6 +21,7 @@
     "accounts": "アカウント",
     "search": "検索",
     "downloads": "ダウンロード",
+    "upload": "アップロード",
     "settings": "設定"
   },
   "home": {
@@ -212,6 +213,28 @@
       "update": "今すぐアップデート",
       "updateFailed": "アップデートの開始に失敗しました。"
     }
+  },
+  "upload": {
+    "title": "IPA アップロード",
+    "description": "Flutter や他のフレームワークでビルドした iOS アプリ（IPA）をアップロードします。",
+    "ipaFile": "IPA ファイル",
+    "dropFile": "IPA ファイルをここにドロップ",
+    "orClick": "またはクリックして選択",
+    "appName": "アプリ名",
+    "bundleId": "Bundle ID",
+    "version": "バージョン",
+    "submit": "IPA をアップロード",
+    "uploading": "アップロード中...",
+    "invalidFile": ".ipa ファイルのみ許可されています",
+    "noFile": "IPA ファイルを選択してください",
+    "missingFields": "すべての必須項目を入力してください",
+    "success": "{{name}} をアップロードしました",
+    "failed": "アップロードに失敗しました。もう一度お試しください。",
+    "instructionsTitle": "iOS 用 Flutter アプリのビルド方法",
+    "step1": "Mac で Flutter プロジェクトを開く",
+    "step2": "'flutter build ipa' を実行して iOS アプリをビルド",
+    "step3": "build/ios/archive/ で .ipa ファイルを見つける",
+    "step4": "上のフォームで .ipa ファイルをアップロード"
   },
   "settings": {
     "title": "設定",

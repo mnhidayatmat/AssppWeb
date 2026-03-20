@@ -21,6 +21,7 @@
     "accounts": "Аккаунты",
     "search": "Поиск",
     "downloads": "Загрузки",
+    "upload": "Загрузить",
     "settings": "Настройки"
   },
   "home": {
@@ -212,6 +213,28 @@
       "update": "Обновить сейчас",
       "updateFailed": "Не удалось начать обновление."
     }
+  },
+  "upload": {
+    "title": "Загрузить IPA",
+    "description": "Загрузите приложение iOS (IPA), созданное с помощью Flutter или других фреймворков.",
+    "ipaFile": "Файл IPA",
+    "dropFile": "Перетащите файл IPA сюда",
+    "orClick": "или нажмите для выбора",
+    "appName": "Название приложения",
+    "bundleId": "Bundle ID",
+    "version": "Версия",
+    "submit": "Загрузить IPA",
+    "uploading": "Загрузка...",
+    "invalidFile": "Разрешены только файлы .ipa",
+    "noFile": "Выберите файл IPA",
+    "missingFields": "Заполните все обязательные поля",
+    "success": "{{name}} успешно загружен",
+    "failed": "Загрузка не удалась. Попробуйте еще раз.",
+    "instructionsTitle": "Как собрать Flutter-приложение для iOS",
+    "step1": "Откройте Flutter-проект на macOS",
+    "step2": "Выполните 'flutter build ipa' для сборки iOS-приложения",
+    "step3": "Найдите .ipa файл в build/ios/archive/",
+    "step4": "Загрузите .ipa файл с помощью формы выше"
   },
   "settings": {
     "title": "Настройки",
