@@ -7,6 +7,7 @@ import { useToastStore } from "../../store/toast";
 import { apiGet } from "../../api/client";
 import { encryptData, decryptData } from "../../utils/crypto";
 import { countryCodeMap } from "../../apple/config";
+import { saveProxy, getProxy } from "../../apple/proxy";
 import type { Account } from "../../types";
 
 interface ServerInfo {
@@ -40,6 +41,8 @@ export default function SettingsPage() {
     () => localStorage.getItem("asspp-default-entity") || "software",
   );
   const [serverInfo, setServerInfo] = useState<ServerInfo | null>(null);
+  const [proxyUrl, setProxyUrl] = useState(() => getProxy() || "");
+  const [showProxy, setShowProxy] = useState(false);
 
   const [exportModalOpen, setExportModalOpen] = useState(false);
   const [exportPassword, setExportPassword] = useState("");
@@ -71,6 +74,11 @@ export default function SettingsPage() {
   const sortedCountries = Object.keys(countryCodeMap).sort((a, b) =>
     t(`countries.${a}`, a).localeCompare(t(`countries.${b}`, b)),
   );
+
+  const handleSaveProxy = () => {
+    saveProxy(proxyUrl.trim() || null);
+    addToast("Proxy configuration saved", "success");
+  };
 
   const handleExport = async () => {
     if (exportPassword !== exportConfirmPassword) {
@@ -205,6 +213,41 @@ export default function SettingsPage() {
                 <option value="ru">Русский</option>
               </select>
             </div>
+          </div>
+        </section>
+
+        <section className="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            Proxy Configuration
+          </h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Configure a residential proxy to bypass Apple&apos;s datacenter IP blocking.
+            Format: http://username:password@host:port or socks5://host:port
+          </p>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <input
+                type="text"
+                value={proxyUrl}
+                onChange={(e) => setProxyUrl(e.target.value)}
+                placeholder="http://user:pass@proxy.example.com:8080"
+                className="flex-1 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors font-mono"
+              />
+              <button
+                onClick={() => {
+                  saveProxy(proxyUrl.trim() || null);
+                  addToast("Proxy saved", "success");
+                }}
+                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                Save
+              </button>
+            </div>
+            {getProxy() && (
+              <p className="text-xs text-green-600 dark:text-green-400">
+                ✓ Proxy configured and active
+              </p>
+            )}
           </div>
         </section>
 

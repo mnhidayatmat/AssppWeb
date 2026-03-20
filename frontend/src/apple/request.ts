@@ -1,6 +1,7 @@
 import { libcurl, initLibcurl } from "./libcurl-init";
 import { buildCookieHeader } from "./cookies";
 import { userAgent } from "./config";
+import { getProxy } from "./proxy";
 import type { Cookie } from "../types";
 
 export interface AppleRequestOptions {
@@ -38,13 +39,22 @@ export async function appleRequest(
     }
   }
 
-  const resp = await libcurl.fetch(url, {
+  const fetchOptions: any = {
     method: opts.method,
     headers,
     body: opts.body,
     redirect: "manual",
     _libcurl_http_version: 1.1,
-  });
+  };
+
+  // Add proxy if configured
+  const proxy = getProxy();
+  if (proxy) {
+    fetchOptions.proxy = proxy;
+    console.log("[Proxy] Using proxy:", proxy.replace(/:[^:]*@/, ':***@'));
+  }
+
+  const resp = await libcurl.fetch(url, fetchOptions);
 
   const responseHeaders: Record<string, string> = {};
   for (const [key, value] of resp.raw_headers) {
